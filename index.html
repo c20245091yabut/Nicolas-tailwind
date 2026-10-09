@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang ="en" class ="white">
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @layer components {
+            .btn-primary {
+                @apply px-6 py-3 bg-red-800 text-white
+                hover:bg-green-400 transition-colors dark:bg-slate-700;
+            }
+
+            
+        }
+    </style>
+</head>
+
+<body class="text-center bg-white text-slate-900 dark:bg-slate-900 dark:text-white transition-colors duration-205">
+
+    <!-- Toggle buttons -->
+    <div class="flex justify-center gap-4 my-5">
+        <button id="switch"
+            class="bg-black text-white px-4 py-2 rounded-[10px] hover:bg-pink-500 transition-colors">
+            SWITCH
+        </button>
+
+        <button id="toggledark"
+            class="bg-black text-white px-4 py-2 rounded-[10px] hover:bg-pink-500 transition-colors">
+            TOGGLEDARK
+        </button>
+    </div>
+
+    <!-- Name -->
+    <h1 class="text-3xl font-bold">
+        Nicolas Kian G. Yabut
+    </h1>
+
+    <header>
+        <h2 class="text-3xl text-red-500 font-bold underline">
+            Hello world!
+        </h2>
+
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center mx-[50px] max-[600px]:flex-col">
+            <span class="text-green-500 text-[50px]">
+                @yabut1219
+            </span>
+
+            <ul class="flex gap-5 list-none max-[600px]:flex-col">
+                <li><a href="#projects" class="hover:text-red-500">Projects</a></li>
+                <li><a href="#services" class="hover:text-red-300">Services</a></li>
+                <li><a href="#contact" class="hover:text-red-200">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main columns -->
+    <main class="flex flex-wrap items-stretch gap-[30px] p-[50px] m-[50px] max-[600px]:p-[15px] max-[600px]:m-[10px]">
+
+        <!-- Projects -->
+        <section id="projects"
+            class="flex flex-col flex-1 min-w-[280px] min-h-[500px] border-2 border-black p-5 bg-blue-400 text-black max-[600px]:min-w-0">
+
+            <h2 class="text-xl font-bold">
+                My Projects
+            </h2>
+
+            <p class="mt-2">
+                Personal portfolio, payroll system, company website,
+                startup website, and compliance monitoring system.
+            </p>
+
+            <!-- Label and button at the bottom -->
+            <p class="mt-auto mb-3 font-bold">
+                 my projects below!
+            </p>
+
+            <a href="#project-details"
+                class="self-center bg-black text-white px-5 py-2 rounded-lg hover:bg-pink-500 transition-colors">
+                VERIFY PROJECTS HERE 👇
+            </a>
+
+        </section>
+
+        <!-- Services -->
+        <section id="services"
+            class="flex flex-col flex-1 min-w-[280px] min-h-[500px] border-2 border-gray-300 dark:border-slate-800 p-5 bg-red-500 text-black max-[600px]:min-w-0">
+
+            <h2 class="text-xl font-bold">
+                My Services
+            </h2>
+
+            <p class="mt-2">
+                Website Creation, System Creation, AI Automation,
+                Database Management, Project Management, Systems Analyst.
+            </p>
+
+        </section>
+
+        <!-- Contact -->
+        <section id="contact"
+            class="flex flex-col flex-1 min-w-[280px] min-h-[500px] border-2 border-black p-5 bg-green-500 text-black max-[600px]:min-w-0">
+
+            <h2 class="text-xl font-bold">
+                Let's build together!
+            </h2>
+
+            <form action="#" class="flex flex-col gap-3 mt-2">
+
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required
+                    class="border border-gray-400 bg-white text-black p-2">
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required
+                    class="border border-gray-400 bg-white text-black p-2">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                    class="border border-gray-400 bg-white text-black p-2"></textarea>
+
+                <button type="submit"
+                    class="bg-black text-white p-3 rounded-[15px] hover:bg-red-500 transition-colors">
+                    Send Message
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        const html = document.documentElement;
+        const switchButton = document.querySelector("#switch");
+        const toggleDarkButton = document.querySelector("#toggledark");
+
+        
+       switchButton.addEventListener("click", function () {
+         document.body.classList.toggle("bg-white");
+         document.body.classList.toggle("bg-green-500");
+
+        });
+
+        // TOGGLEDARK: turn dark mode on or off
+        toggleDarkButton.addEventListener("click", function () {
+            html.classList.toggle("dark");
+        });
+    </script>
+
+</body>
+</html>
