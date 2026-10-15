@@ -1,4 +1,3 @@
-
 console.log("Hello World");
 
         const myName = "jake senayo";
@@ -133,5 +132,3 @@ console.log("Hello World");
             }
 
         });
-
-    
